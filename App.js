@@ -16,21 +16,21 @@ export default class Numbergame extends React.Component {
   }
   setValues = (e) => {
     this.setState({ finalPrice: 0 })
-    // this.setState({ discount: this.state.discount = (this.state.discount / 100) })
-    // this.setState({ finalPrice: this.state.finalPrice = (this.state.price - (this.state.discount * this.state.price)) })
-    // this.setState({ save: this.state.save = (this.state.discount * this.state.price) })
-    // this.setState({ finalPrice: (this.state.finalPrice -= (this.state.finalPrice % .01)) })
-    // this.setState({ save: (this.state.save -= (this.state.save % .01)) })
-    // this.setState({ history: this.state.history += ("Original Price " + this.state.price + "\n") })
-    // this.setState({ history: this.state.history += (("You Pay: " + (this.state.finalPrice) + "\n")) })
-    // this.setState({ history: this.state.history += ("You Save: " + this.state.save + "\n") })
+    this.setState({ discount: this.state.discount = (this.state.discount / 100) })
+    this.setState({ finalPrice: this.state.finalPrice = (this.state.price - (this.state.discount * this.state.price)) })
+    this.setState({ save: this.state.save = (this.state.discount * this.state.price) })
+    this.setState({ finalPrice: (this.state.finalPrice -= (this.state.finalPrice % .01)) })
+    this.setState({ save: (this.state.save -= (this.state.save % .01)) })
+    this.setState({ history: this.state.history += ("Original Price " + this.state.price + "\n") })
+    this.setState({ history: this.state.history += (("You Pay: " + (this.state.finalPrice) + "\n")) })
+    this.setState({ history: this.state.history += ("You Save: " + this.state.save + "\n") })
     //alert(this.state.history)
   }
   display = () => {
     if (this.state.transition == 1) {
       return (
         <View style={{ backgroundColor: '#3A4655', flex: 1 }}>
-          {/* <Modal animationType="slide" transparent={true} visible={this.state.modal} onRequestClose={() => { this.setState({ transition: (this.state.transition = 2) }) }}>
+          <Modal animationType="slide" transparent={true} visible={this.state.modal} onRequestClose={() => { this.setState({ transition: (this.state.transition = 2) }) }}>
             <View style={styles.centeredView}>
             <ScrollView>
               <Text style={{ fontSize: 13, color: "black" }}>{this.state.history}</Text>
@@ -45,7 +45,7 @@ export default class Numbergame extends React.Component {
                 </View>
               </View>
             </View>
-          </Modal> */}
+          </Modal>
         </View>
       )
     }
