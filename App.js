@@ -93,71 +93,7 @@ export default class Numbergame extends React.Component {
   mainScreen = () => {
     return (
       <View style={{ backgroundColor: '#3A4655', flex: 1 }}>
-        <View style={styles.heading}>
-          <Text
-            style={{
-              color: 'red',
-              fontFamily: 'Arial',
-              fontWeight: 'bold',
-              textAlign: 'center',
-            }}>
-            GUESS A NUMBER
-          </Text>
-        </View>
-        <View style={styles.startGame}>
-          <View style={{ width: '66%' }}>
-            <Button
-              color="red"
-              title="Start Game"
-              onPress={this.updateTransition.bind()}
-            />
-          </View>
-        </View>
-      </View>
-    );
-  };
-  screenSwitching = () => {
-    if (this.state.transition == 0) {
-      return (
-        <View style={{ backgroundColor: '#3A4655', flex: 1 }}>
-          <View style={styles.heading}>
-            <Text
-              style={{
-                color: 'red',
-                fontFamily: 'Arial',
-                fontWeight: 'bold',
-                textAlign: 'center',
-              }}>
-              GUESS A NUMBER
-            </Text>
-          </View>
-          <View style={styles.startGame}>
-            <View style={{ width: '66%' }}>
-              <Button
-                color="red"
-                title="Start Game"
-                onPress={this.updateTransition.bind()}
-              />
-            </View>
-          </View>
-        </View>
-      );
-    } else if (this.state.transition == 1) {
-      return (
-        <View style={{ backgroundColor: '#3A4655', flex: 1 }}>
-          <View style={styles.heading}>
-            <Text
-              style={{
-                color: 'red',
-                fontFamily: 'Arial',
-                fontWeight: 'bold',
-                textAlign: 'center',
-              }}>
-              GUESS A NUMBER
-            </Text>
-          </View>                
-          <View style={styles.score}>  
-          <View>
+        <View>
           <Text
               style={{
                 width:"100%",
@@ -182,9 +118,8 @@ export default class Numbergame extends React.Component {
               onPress={this.updateTransition.bind()}
           />  
           </View>                 
-          </View>
-          <View style={styles.body}>
-            <View>
+        </View>
+        <View>
               <Text
                 style={{
                   color: '#fff',
@@ -411,20 +346,12 @@ export default class Numbergame extends React.Component {
               <View style={{ width: '43%' }}>
                 <Button
                   color="red"
-                  title="Play Again"
-                  onPress={this.updateTransition.bind(this,1)}
-               />
-              </View>
+              disabled={this.state.bb}
+              title={'Calculate'}
+              onPress={this.setValues.bind(this, 2)}
+            />
           </View>
-           
         </View>
-      );
-    }
-  };
-  render() {
-    return (
-      <View style={{ backgroundColor: '#3A4655', flex: 1 }}>
-        {this.screenSwitching()}
       </View>
     );
   }
@@ -456,12 +383,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: '10%',
     marginRight: '10%',
-    marginTop: '3%',
-  },
-  score: {
-    flexDirection:"row",
-    flex:0.3,
-    marginTop: '2%',
   },
   heading: {
     flex: 0.155,
@@ -471,7 +392,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 0,
     borderColor: '#fff',
-    width: '66%',
-    height: 'auto',
   },
 });
